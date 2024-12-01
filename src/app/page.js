@@ -2,15 +2,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image'
 
+
 export default function LandingPage() {
 
   const testimonials = [
     {
-      quote: "The Snorkle glass has completely changed how I enjoy my shots. It's a game-changer!",
+      quote: "The Snorkel glass has completely changed how I enjoy my shots. It's a game-changer!",
       author: "Happy Customer",
     },
     {
-      quote: "I love the Snorkle! Taking shots has never been this smooth and enjoyable.",
+      quote: "I love the Snorkel! Taking shots has never been this smooth and enjoyable.",
       author: "Shot Enthusiast",
     },
     {
@@ -18,7 +19,7 @@ export default function LandingPage() {
       author: "Satisfied Drinker",
     },
     {
-      quote: "Brilliant idea! The Snorkle makes every shot fun and effortless.",
+      quote: "Brilliant idea! The Snorkel makes every shot fun and effortless.",
       author: "Excited Partygoer",
     },
   ];
@@ -39,11 +40,12 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-sky-50">
+      <img src="/logo.png" alt="Snorkel Glass Logo" className="fixed top-4 left-4 z-20 w-24 h-auto" />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <Image
-          src="/snorkleBanner.jpeg"
-          alt="Snorkle Glass Banner"
+          src="/snorkleBannerUpscaled.jpeg"
+          alt="Snorkel Glass Banner"
           fill
           className="object-cover"
           priority
@@ -51,36 +53,101 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-sky-900/50" />
         <div className="relative z-10 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Make Shots Great Again</h1>
-          <p className="text-xl md:text-2xl mb-8">Experience the revolution in shot glasses</p>
+          <p className="text-xl md:text-2xl mb-8">Experience the Made-In-America revolution in shot glasses</p>
           <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
             Shop Now
           </Button>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 md:px-8">
+      {/* How Does it Work Section */}
+      <section className="py-8 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-900">Why Choose Snorkle?</h2>
+          <h3 className="text-2xl text-center text-sky-400 font-bold">🤿 SNORKEL LESSONS 👇</h3>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-sky-900">How Does It Work?</h2>
+          <div className="mx-auto justify-center flex mb-4">
+            <img 
+              src="/SnorkelGuideNew.jpeg"
+              alt="Snorkel Guide"
+              className="rounded-xl max-w-2xl shadow-xl"
+            />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard
-              title="Innovative Design"
-              description="Unique dual-chamber shot glass provides a smoother shot taking experience"
-              icon="🍹"
+              title="Pour Chaser"
+              description="Start by filling the bottom chamber of the snorkel with your chaser"
+              icon={<i className="fas fa-tint text-sky-500 text-4xl"></i>} // Droplet icon for liquid
             />
             <FeatureCard
-              title="American Made"
-              description="Proudly manufactured in the USA with premium materials"
-              icon="🇺🇸"
+              title="Pour Liquor"
+              description="Fill the top chamber of the snorkel with your chosen liquor"
+              icon={<i className="fas fa-wine-glass-alt text-red-500 text-4xl"></i>} // Wine glass icon
             />
             <FeatureCard
-              title="Party Favorite"
-              description="Be the life of the party with this conversation starter"
-              icon="🎉"
+              title="Drink Up!"
+              description="Our specialized design allows the chaser to come in before you can even taste the shot"
+              icon={<i className="fas fa-glass-cheers text-green-500 text-4xl"></i>} // Cheers icon
             />
           </div>
         </div>
       </section>
+
+      {/* Features Section */}
+      <section className="relative py-16 px-4 md:px-8 bg-gradient-to-r from-sky-50 to-sky-100">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-sky-900">
+      Why Choose Snorkel?
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* Left Side: Large Image */}
+      <div className="flex justify-center">
+        <img 
+          src="/SnorkelGlassShowcase.jpeg" 
+          alt="Snorkel Glass Showcase"
+          className="rounded-xl shadow-lg max-w-md"
+        />
+      </div>
+
+      {/* Right Side: Feature Cards */}
+      <div className="space-y-8">
+        <div className="flex items-center">
+          <div className="text-red-500 text-5xl mr-4">
+            <i className="fas fa-lightbulb"></i>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-sky-900">Innovative Design</h3>
+            <p className="text-gray-600">
+              Unique dual-chamber shot glass provides a smoother shot-taking experience.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <div className="text-blue-500 text-5xl mr-4">
+            <i className="fas fa-flag-usa"></i>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-sky-900">American Made</h3>
+            <p className="text-gray-600">
+              Proudly manufactured in the USA with premium materials.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <div className="text-green-500 text-5xl mr-4">
+            <i className="fas fa-glass-cheers"></i>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-sky-900">Party Favorite</h3>
+            <p className="text-gray-600">
+              Be the life of the party with this conversation starter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonial Section */}
       <section className="bg-white py-16 px-4 md:px-8">
@@ -117,7 +184,7 @@ export default function LandingPage() {
       <section className="bg-sky-100 py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-900">Ready to Elevate Your Shot Game?</h2>
-          <p className="text-xl mb-8 text-sky-700">Join the Snorkle revolution and make every shot count!</p>
+          <p className="text-xl mb-8 text-sky-700">Join the Snorkel revolution and make every shot count!</p>
           <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
             Shop Now
           </Button>
@@ -127,7 +194,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-sky-900 text-white py-8 px-4 md:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <p>&copy; 2024 Snorkle Glass. All rights reserved.</p>
+          <p>&copy; 2024 Snorkel Glass. All rights reserved.</p>
         </div>
       </footer>
     </div>
