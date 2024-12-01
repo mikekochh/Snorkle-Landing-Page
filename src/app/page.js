@@ -44,7 +44,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <Image
-          src="/SnorkleBannerUpscaled.jpeg"
+          src="/snorkleBannerUpscaled.jpeg"
           alt="Snorkel Glass Banner"
           fill
           className="object-cover"
