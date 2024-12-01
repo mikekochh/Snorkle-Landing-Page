@@ -44,7 +44,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <Image
-          src="/snorkleBannerUpscaled.jpeg"
+          src="/SnorkleBannerUpscaled.jpeg"
           alt="Snorkel Glass Banner"
           fill
           className="object-cover"
@@ -213,14 +213,21 @@ function FeatureCard({ title, description, icon }) {
 
 function Button({ size = 'default', children, className = '', ...props }) {
   const sizeClasses = size === 'lg' ? 'px-6 py-3 text-lg' : 'px-4 py-2 text-base'
-  
+
   return (
-    <button
-      className={`font-semibold rounded-md transition-colors ${sizeClasses} ${className}`}
-      {...props}
+    <a 
+      href="https://link.fastpaydirect.com/payment-link/674cecf1b82a17f5a309e711" 
+      target="_blank" 
+      rel="noopener noreferrer"
     >
-      {children}
-    </button>
+      <button
+        className={`font-semibold rounded-md transition-colors ${sizeClasses} ${className}`}
+        {...props}
+      >
+        {children}
+      </button>
+    </a>
   )
 }
+
 
