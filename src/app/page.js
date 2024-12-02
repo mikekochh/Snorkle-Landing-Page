@@ -89,7 +89,7 @@ export default function LandingPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-sky-900">How Does It Work?</h2>
           <div className="mx-auto justify-center flex mb-8">
             <img 
-              src="/SnorkelGuideNew.jpeg"
+              src="/SnorkelGuide.jpeg"
               alt="Snorkel Guide"
               className="rounded-xl shadow-xl max-w-2xl w-full sm:w-auto"
             />
