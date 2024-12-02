@@ -53,11 +53,11 @@ export default function LandingPage() {
         />
         <div className="absolute inset-0 bg-sky-900/50" />
 
-        {/* Main Content - Centered Vertically */}
-        <div className="relative z-10 flex-grow flex items-center justify-center text-center text-white">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Make Shots Great Again</h1>
-            <p className="text-xl md:text-2xl mb-8 mx-1">Experience the Made-In-America revolution in shot glasses</p>
+        {/* Main Content */}
+        <div className="relative z-10 flex-grow flex flex-col items-center justify-start md:mt-0 mt-16 md:justify-center text-center text-white">
+          <div className="mt-4 md:mt-0">
+            <h1 className="text-5xl md:text-6xl font-bold mb-2">Make Shots Great Again</h1>
+            <p className="text-xl md:text-2xl mb-4 mx-1">Experience the Made-In-America revolution in shot glasses</p>
             <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
               Shop Now
             </Button>
@@ -65,8 +65,8 @@ export default function LandingPage() {
         </div>
 
         {/* Learn More Section - Positioned at the Bottom */}
-        <div className="relative z-10 mb-4 text-center">
-          <p className="font-semibold text-white">Learn more about the Snorkel Revolution below</p>
+        <div className="relative z-10 mb-10 text-center">
+          <p className="font-semibold text-white text-xl">Learn more about the Snorkel Revolution below</p>
           <div className="mt-2 animate-bounce">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +80,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
 
       {/* How Does it Work Section */}
       <section className="py-8 px-4 md:px-8">
