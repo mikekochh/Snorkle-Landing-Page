@@ -56,8 +56,8 @@ export default function LandingPage() {
         {/* Main Content */}
         <div className="relative z-10 flex-grow flex flex-col items-center justify-start md:mt-0 mt-16 md:justify-center text-center text-white">
           <div className="mt-4 md:mt-0">
-            <h1 className="text-5xl md:text-6xl font-bold mb-2">Make Shots Great Again</h1>
-            <p className="text-xl md:text-2xl mb-4 mx-1">Experience the Made-In-America revolution in shot glasses</p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-2 mx-2">Make Shots Great Again</h1>
+            <p className="text-xl md:text-2xl mb-4 mx-2">Experience the Made-In-America revolution in shot glasses</p>
             <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
               Shop Now
             </Button>
