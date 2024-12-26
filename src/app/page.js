@@ -25,6 +25,8 @@ export default function LandingPage() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [quantity, setQuantity] = useState(5);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => 
@@ -37,6 +39,20 @@ export default function LandingPage() {
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   }
+
+  const handleCheckout = () => {
+    if (quantity > 5) {
+      window.open(
+        "https://link.fastpaydirect.com/payment-link/674cecf1b82a17f5a309e711",
+        "_blank"
+      );
+    } else {
+      window.open(
+        "https://link.fastpaydirect.com/payment-link/674cecf1b82a17f5a309e711",
+        "_blank"
+      );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-sky-50">
@@ -55,12 +71,15 @@ export default function LandingPage() {
 
         {/* Main Content */}
         <div className="relative z-10 flex-grow flex flex-col items-center justify-start md:mt-0 mt-16 md:justify-center text-center text-white">
-          <div className="mt-4 md:mt-0">
-            <h1 className="text-5xl md:text-6xl font-bold mb-2 mx-2">Make Shots Great Again</h1>
-            <p className="text-xl md:text-2xl mb-4 mx-2">Experience the Made-In-America revolution in shot glasses</p>
-            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+          <div className="mt-4 md:mt-0 w-2/3 mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-2">Experience Shots Like Never Before</h1>
+            <p className="text-xl md:text-2xl mb-4 mx-2">The first ever dual-chamber designed shot glass that makes taking shots with a chaser as easy and as smooth as ever</p>
+            <button 
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg' rounded-md font-semibold"
+              onClick={() => setIsModalOpen(true)}  
+            >
               Shop Now
-            </Button>
+            </button>
           </div>
         </div>
 
@@ -208,11 +227,46 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-900">Ready to Elevate Your Shot Game?</h2>
           <p className="text-xl mb-8 text-sky-700">Join the Snorkel revolution and make every shot count!</p>
-          <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
-            Shop Now
-          </Button>
+          <button 
+            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg' rounded-md font-semibold"
+            onClick={() => setIsModalOpen(true)}  
+          >
+            Shop Now  
+          </button> 
         </div>
       </section>
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+            <h2 className="text-xl font-bold text-sky-900 mb-2">
+              Please Select a Quantity
+            </h2>
+            <h3 className="text-sm font-bold text-red-700 mb-4">$30 each, but when you get 5 or more, they&apos;re only $25 each.</h3>
+            <input
+              type="number"
+              min="1"
+              className="w-full border border-gray-300 rounded-md p-2 text-center text-black"
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+            />
+            <div className="flex justify-between mt-6">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="bg-gray-300 px-4 py-2 rounded-md text-gray-800"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCheckout}
+                className="bg-red-600 px-4 py-2 rounded-md text-white"
+              >
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* Footer */}
       <footer className="bg-sky-900 text-white py-8 px-4 md:px-8">
